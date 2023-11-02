@@ -1,0 +1,50 @@
+{
+  "star-rail-warp-sim": {
+    "title": "Star Rail Warp Sim",
+    "desc": "Cool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool project. Features internationalization for 12 langauges.",
+    "tech": ["React", "Javascript", "HTML", "CSS"],
+    "preview": "/sr.mp4",
+    "link": "https://starrailwarpsim.com/",
+    "github": "https://github.com/mikeli0623/star-rail-warp-sim",
+    "placeholder": "/sr.webp",
+    "demo": false
+  },
+  "ros": {
+    "title": "Restaurant Ordering System",
+    "desc": "",
+    "tech": [
+      "MongoDB",
+      "Express",
+      "Node",
+      "React",
+      "Javascript",
+      "HTML",
+      "CSS"
+    ],
+    "preview": "/ros.mp4",
+    "link": "https://restaurant-ordering-system-r080.onrender.com/",
+    "github": "https://github.com/mikeli0623/ros-full",
+    "placeholder": "/ros.webp",
+    "demo": false
+  },
+  "music": {
+    "title": "Heardle Unlimited",
+    "desc": "Heardle, but unlimited attempts on a track pool of your choice using Spotify Premium. Features full track playback and also works with local files. Currently need to have your Spotify account whitelisted to use the Spotify integration.",
+    "tech": ["Express", "Node", "React", "Javascript", "HTML", "CSS"],
+    "preview": "heardle.mp4",
+    "link": "https://heardle-unlimited.onrender.com/",
+    "github": "https://github.com/mikeli0623/SWRENG-2S03-Assignments",
+    "placeholder": "heardle.webp",
+    "demo": true
+  },
+  "filter": {
+    "title": "Kernal Image Processor",
+    "desc": "Uses a kernel (convolution matrix) to perform simple image processing on PPM images. Includes other options from a 'failed' implementation. Originally implemented in C and ported to the web.",
+    "tech": ["C", "Javascript", "HTML"],
+    "preview": "",
+    "link": "/convolution",
+    "github": "https://github.com/mikeli0623/SWRENG-2S03-Assignments",
+    "placeholder": "",
+    "demo": true
+  }
+}
