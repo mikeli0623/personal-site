@@ -5,9 +5,10 @@ import Badge from "./Badge";
 interface TechProps {
   tech: string[];
   flip: boolean;
+  width: number;
 }
 
-const ProjectTech = ({ tech, flip }: TechProps) => {
+const ProjectTech = ({ tech, flip, width }: TechProps) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -21,7 +22,7 @@ const ProjectTech = ({ tech, flip }: TechProps) => {
 
   const item = {
     hidden:
-      screen.width > 640
+      width > 640
         ? { opacity: 0, x: flip ? -45 : 45, rotate: flip ? 45 : -45 }
         : { opacity: 0, y: 50 },
     show: { opacity: 1, x: 0, y: 0, rotate: 0 },
@@ -33,7 +34,7 @@ const ProjectTech = ({ tech, flip }: TechProps) => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: screen.width > 640 ? 0.7 : 0.3 }}
+      viewport={{ once: true, amount: width > 640 ? 0.7 : 0.3 }}
     >
       {tech.map((t) => (
         <motion.div key={t} variants={item}>

@@ -40,29 +40,47 @@ const AboutMe = forwardRef<Ref, Prop>((prop, ref) => {
         DOOOOOMMMM!!!!!!!!!!!!!!!! {"<"}--- me bein random again ^_^
         hehe…toodles!!!!! love and waffles, t3h PeNgU1N oF d00m
       </div>
-      <div className="lg:w-2/3 w-11/12 grid grid-cols-6 gap-2">
-        <h3 className="text-base md:text-xl text-accent col-span-2 m-auto">
+      <div className="lg:w-2/3 w-11/12 grid grid-cols-3 gap-2">
+        <h3 className="text-base md:text-xl text-accent  m-auto">
           Programming Languages
         </h3>
-        <h3 className="text-base md:text-xl text-accent col-span-2 m-auto">
+        <h3 className="text-base md:text-xl text-accent m-auto">
           Web Development
         </h3>
-        <h3 className="text-base md:text-xl text-accent col-span-2 mb-auto ml-auto mr-auto">
-          Cloud Services
+        <h3 className="text-base md:text-xl text-accent mb-auto ml-auto mr-auto">
+          Cloud Development
         </h3>
-        <div className="col-span-2 grid grid-cols-2 gap-2 grid-rows-4">
+        <div className="grid grid-cols-2 gap-2 grid-rows-4">
           {langs.map((t) => {
-            return <Badge key={t} tech={t} className={` ml-auto mr-auto`} />;
+            return (
+              <Badge
+                key={t}
+                tech={t}
+                className={` lg:ml-auto ml-auto lg:mr-auto mr-auto`}
+              />
+            );
           })}
         </div>
-        <div className="col-span-2 grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           {web.map((t) => {
-            return <Badge key={t} tech={t} className={` ml-auto mr-auto`} />;
+            return (
+              <Badge
+                key={t}
+                tech={t}
+                className={` lg:ml-auto ml-auto lg:mr-auto mr-auto`}
+              />
+            );
           })}
         </div>
-        <div className="col-span-2 grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 gap-2">
           {cloud.map((t) => {
-            return <Badge key={t} tech={t} className={` ml-auto mr-auto`} />;
+            return (
+              <Badge
+                key={t}
+                tech={t}
+                className={` lg:ml-auto ml-auto lg:mr-auto mr-auto`}
+              />
+            );
           })}
         </div>
       </div>

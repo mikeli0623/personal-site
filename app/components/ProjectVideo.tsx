@@ -7,9 +7,16 @@ interface VideoProps {
   src: string;
   playing: boolean;
   flip: boolean;
+  width: number;
 }
 
-const ProjectVideo = ({ placeholder, src, playing, flip }: VideoProps) => {
+const ProjectVideo = ({
+  placeholder,
+  src,
+  playing,
+  flip,
+  width,
+}: VideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const isOnScreen = useOnScreen(videoRef);
 
@@ -50,7 +57,7 @@ const ProjectVideo = ({ placeholder, src, playing, flip }: VideoProps) => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: screen.width > 640 ? 0.7 : 0.3 }}
+      viewport={{ once: true, amount: width > 640 ? 0.7 : 0.3 }}
     >
       <motion.video
         className={`${

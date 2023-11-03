@@ -7,14 +7,8 @@ import Image from "next/image";
 import SocialGroup from "./SocialGroup";
 import Link from "next/link";
 
-const TopNav: React.FC<NavProps> = ({
-  projectRef,
-  contactRef,
-  aboutRef,
-  scrollRef,
-  activeNav,
-}) => {
-  const scrollToElement = (element: HTMLDivElement) => {
+const TopNav = ({ projectRef, contactRef, aboutRef, scrollRef, activeNav }) => {
+  const scrollToElement = (element) => {
     const offset = ref.current?.clientHeight || 0;
     const y =
       element.getBoundingClientRect().top +
@@ -24,7 +18,7 @@ const TopNav: React.FC<NavProps> = ({
     scrollRef.current?.view.scroll({ top: y, behavior: "smooth" });
   };
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
 
   return (
     <div

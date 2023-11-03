@@ -4,7 +4,7 @@ import ProjectVideo from "./ProjectVideo";
 import ProjectTech from "./ProjectTech";
 import { motion, Variants } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { title } from "process";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface Props {
   project: Project;
@@ -30,11 +30,13 @@ const variants: Variants = {
 const Project: React.FC<Props> = ({ project, flip }) => {
   const [playing, setPlaying] = useState(false);
 
+  const { width } = useWindowSize();
+
   return (
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: screen.width > 640 ? 0.7 : 0.3 }}
+      viewport={{ once: true, amount: width > 640 ? 0.7 : 0.3 }}
       className={`w-11/12 my-4 flex items-center`}
     >
       <motion.div
@@ -49,6 +51,7 @@ const Project: React.FC<Props> = ({ project, flip }) => {
             placeholder={project.placeholder}
             playing={playing}
             flip={flip}
+            width={width}
           />
         )}
         <ProjectCard
@@ -60,7 +63,7 @@ const Project: React.FC<Props> = ({ project, flip }) => {
           playing={playing}
           onClick={() => setPlaying(!playing)}
         />
-        <ProjectTech tech={project.tech} flip={flip} />
+        <ProjectTech tech={project.tech} flip={flip} width={width} />
       </motion.div>
     </motion.div>
   );
