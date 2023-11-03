@@ -5,6 +5,7 @@ import NavButton from "./NavButton";
 import { NavProps } from "../util/interfaces";
 import Image from "next/image";
 import SocialGroup from "./SocialGroup";
+import Link from "next/link";
 
 const TopNav: React.FC<NavProps> = ({
   projectRef,
@@ -13,10 +14,6 @@ const TopNav: React.FC<NavProps> = ({
   scrollRef,
   activeNav,
 }) => {
-  const handleScrollTop = () => {
-    scrollRef.current?.view.scroll({ top: 0, behavior: "smooth" });
-  };
-
   const scrollToElement = (element: HTMLDivElement) => {
     const offset = ref.current?.clientHeight || 0;
     const y =
@@ -31,22 +28,16 @@ const TopNav: React.FC<NavProps> = ({
 
   return (
     <div
-      className="navbar w-screen p-4 bg-neutral fixed top-0 z-50 hidden md:block "
+      className="navbar w-screen p-4 fixed top-0 z-50 hidden md:block "
       ref={ref}
       style={{
-        background: " rgba(81, 81, 81, 0.27)",
+        background: " rgba(102,178,178, 0.27)",
         boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(6.3px)",
       }}
     >
       <div className="grid grid-cols-[0.25fr_0.5fr_0.25fr] w-full justify-center content-center">
-        <button
-          className="btn btn-circle col-start-1 m-auto tooltip tooltip-bottom flex"
-          data-tip="Go to Top"
-          onClick={handleScrollTop}
-        >
-          <Image src="/up.svg" alt="Up Icon" width={25} height={25} />
-        </button>
+        <h2 className="text-2xl m-auto">Mike Li</h2>
         <div className="flex justify-center col-start-2 w-full">
           <NavButton
             text="About Me"
@@ -71,12 +62,8 @@ const TopNav: React.FC<NavProps> = ({
           />
         </div>
         <div className="col-start-3 flex justify-center">
-          <button className="btn btn-ghost max-w-[110px] m-auto">
-            <a
-              onClick={() => window.open("resume.pdf")}
-              target="_blank"
-              className="cursor-pointer"
-            >
+          <Link href={"resume.pdf"} target="_blank" className="cursor-pointer">
+            <button className="btn btn-ghost hover:bg-secondary max-w-[110px] m-auto">
               <div className="flex items-center justify-center">
                 <p>Résumé</p>
                 <Image
@@ -85,11 +72,15 @@ const TopNav: React.FC<NavProps> = ({
                   width={20}
                   height={20}
                   className="ml-1"
+                  style={{
+                    filter:
+                      "invert(94%) sepia(0%) saturate(1%) hue-rotate(138deg) brightness(90%) contrast(94%)",
+                  }}
                 />
               </div>
-            </a>
-          </button>
-          <SocialGroup className="m-auto" dark={true} />
+            </button>
+          </Link>
+          <SocialGroup className="m-auto" dark={false} />
         </div>
       </div>
     </div>

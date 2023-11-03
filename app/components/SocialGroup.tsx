@@ -13,7 +13,7 @@ const SocialGroup = ({ className = "", dark = false }: Prop) => {
       <div className="grid grid-flow-col gap-4 justify-center items-center">
         <Link
           href="mailto:mike.li0623@gmail.com"
-          className="hover:brightness-125 hover:scale-110 ease-in transition"
+          className="hover:brightness-125 hover:scale-110 ease-in transition active:scale-95"
         >
           <Image
             src="email.svg"
@@ -23,14 +23,14 @@ const SocialGroup = ({ className = "", dark = false }: Prop) => {
             style={{
               filter: dark
                 ? ""
-                : "invert(91%) sepia(12%) saturate(507%) hue-rotate(342deg) brightness(104%) contrast(96%)",
+                : "invert(92%) sepia(32%) saturate(694%) hue-rotate(123deg) brightness(74%) contrast(81%)",
             }}
           />
         </Link>
         <Link
           href="https://github.com/mikeli0623"
           target="_blank"
-          className="hover:brightness-125 hover:scale-110 ease-in transition"
+          className="hover:brightness-125 hover:scale-110 ease-in transition active:scale-95"
         >
           <Image
             src={`/github-mark.svg`}
@@ -39,7 +39,7 @@ const SocialGroup = ({ className = "", dark = false }: Prop) => {
             style={{
               filter: dark
                 ? ""
-                : "brightness(0) saturate(100%) invert(91%) sepia(12%) saturate(507%) hue-rotate(342deg) brightness(104%) contrast(96%)",
+                : "brightness(0) saturate(100%) invert(92%) sepia(32%) saturate(694%) hue-rotate(123deg) brightness(74%) contrast(81%)",
             }}
             alt="GitHub Icon"
           />
@@ -47,7 +47,7 @@ const SocialGroup = ({ className = "", dark = false }: Prop) => {
         <Link
           href="https://www.linkedin.com/in/mikeli623/"
           target="_blank"
-          className="hover:brightness-125 hover:scale-110 ease-in transition"
+          className="hover:brightness-125 hover:scale-110 ease-in transition active:scale-95"
         >
           <Image
             src="/linkedin.svg"
@@ -57,7 +57,7 @@ const SocialGroup = ({ className = "", dark = false }: Prop) => {
             style={{
               filter: dark
                 ? ""
-                : "invert(91%) sepia(12%) saturate(507%) hue-rotate(342deg) brightness(104%) contrast(96%)",
+                : "invert(92%) sepia(32%) saturate(694%) hue-rotate(123deg) brightness(74%) contrast(81%)",
             }}
           />
         </Link>

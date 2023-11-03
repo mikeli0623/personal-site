@@ -343,16 +343,14 @@ export default function Page() {
 
   const [canDownload, setCanDownload] = useState(false);
 
-  const [isComputing, setIsComputing] = useState(false);
-
   return (
-    <main className="flex min-h-screen flex-col items-center p-10">
+    <main className="flex min-h-screen flex-col items-center p-10 text-black">
       <input
         type="file"
         id="file"
         accept="image/*"
         onChange={(e) => handleChange(e)}
-        className="file-input"
+        className="file-input file-input-primary"
       />
       <Options setFilterType={setFilterType} />
       <button

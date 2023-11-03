@@ -28,33 +28,28 @@ const variants: Variants = {
 };
 
 const Project: React.FC<Props> = ({ project, flip }) => {
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: screen.width > 640 ? 0.7 : 0.3 }}
       className={`w-11/12 my-4 flex items-center`}
     >
       <motion.div
-        className={`w-full h-full flex items-center ${
-          flip ? "justify-end" : "justify-start"
+        className={`w-full h-full flex items-center justify-start flex-col ${
+          flip ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
         variants={variants}
       >
-        {flip ? (
-          <ProjectTech tech={project.tech} flip={flip} />
-        ) : (
-          project.preview && (
-            <ProjectVideo
-              src={project.preview}
-              placeholder={project.placeholder}
-              playing={playing}
-              setPlaying={setPlaying}
-              link={project.link}
-            />
-          )
+        {project.preview && (
+          <ProjectVideo
+            src={project.preview}
+            placeholder={project.placeholder}
+            playing={playing}
+            flip={flip}
+          />
         )}
         <ProjectCard
           title={project.title}
@@ -65,19 +60,7 @@ const Project: React.FC<Props> = ({ project, flip }) => {
           playing={playing}
           onClick={() => setPlaying(!playing)}
         />
-        {flip ? (
-          project.preview && (
-            <ProjectVideo
-              src={project.preview}
-              placeholder={project.placeholder}
-              playing={playing}
-              setPlaying={setPlaying}
-              link={project.link}
-            />
-          )
-        ) : (
-          <ProjectTech tech={project.tech} flip={flip} />
-        )}
+        <ProjectTech tech={project.tech} flip={flip} />
       </motion.div>
     </motion.div>
   );

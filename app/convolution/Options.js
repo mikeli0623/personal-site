@@ -7,8 +7,9 @@ const Options = ({ setFilterType }) => {
         className="select select-bordered"
         name="filters"
         onChange={({ target }) => setFilterType(target.value)}
+        defaultValue="selected"
       >
-        <option disabled selected>
+        <option disabled value="selected">
           Select a Filter
         </option>
         <option value="original">Original</option>

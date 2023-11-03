@@ -42,6 +42,10 @@ export default function Home() {
     else setActiveNav(null);
   };
 
+  const handleScrollTop = () => {
+    scrollRef.current?.view.scroll({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <main className={raleway.className}>
       <TopNav
@@ -55,13 +59,16 @@ export default function Home() {
         className="min-w-screen min-h-screen flex flex-col items-center justify-between p-4 md:p-24 "
         universal
         onScroll={determineActiveNav}
+        renderThumbVertical={({ style, ...props }) => (
+          <div {...props} style={{ ...style }} className="bg-neutral" />
+        )}
         ref={scrollRef}
       >
         <Hero />
         <AboutMe ref={aboutRef} />
         <ProjectSection ref={projectRef} />
         <Contact ref={contactRef} />
-        <Footer />
+        <Footer handleScrollTop={handleScrollTop} />
       </Scrollbars>
     </main>
   );
