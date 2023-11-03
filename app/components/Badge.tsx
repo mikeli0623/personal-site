@@ -42,7 +42,7 @@ const Badge = ({ tech, className }: Props) => {
     >
       <div className={`lg:w-10 lg:h-10 h-7 w-7 relative mx-2`}>
         <Image
-          src={`/${tech.toLowerCase()}.png`}
+          src={`/${tech.toLowerCase()}.webp`}
           alt={tech}
           fill
           style={{ objectFit: "contain" }}

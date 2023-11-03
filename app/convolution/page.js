@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import convolution from "../util/convolution";
 import funConvolution from "../util/funConvolution";
-import Link from "next/link";
+import { useDropzone } from "react-dropzone";
 import Options from "./Options";
 
 const KERNEL_MAP = {
@@ -226,8 +226,9 @@ export default function Page() {
     return [w, h];
   };
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     if (!e.target.files.length) return;
+
     setHasImg(false);
     setLoading(true);
     setCanDownload(false);
@@ -267,7 +268,7 @@ export default function Page() {
       getBlobURL(getPPMString(canvas, ctx));
     };
     img.src = url;
-  };
+  }, []);
 
   const setKernel = () => {
     let kernel = KERNEL_MAP[filterType];
@@ -343,8 +344,31 @@ export default function Page() {
 
   const [canDownload, setCanDownload] = useState(false);
 
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      const e = { target: { files: acceptedFiles } };
+      handleChange(e);
+    },
+    [handleChange]
+  );
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    noClick: true,
+    onDrop,
+    accept: { "image/*": [] },
+  });
+
   return (
-    <main className="flex min-h-screen flex-col items-center p-10 text-black">
+    <main
+      {...getRootProps()}
+      className="flex min-h-screen flex-col items-center p-10 text-black relative"
+    >
+      <input {...getInputProps()} />
+      {isDragActive && (
+        <div className="w-full h-full bg-black/60 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex">
+          <h1 className="text-5xl m-auto text-white">Drop images here ...</h1>
+        </div>
+      )}
       <input
         type="file"
         id="file"
@@ -366,9 +390,9 @@ export default function Page() {
         ref={canvasRef}
         height={maxHeight}
         width={maxWidth}
-        className="border-gray-800 border-2"
+        className=""
       />
-      <a ref={downloadRef} href="#" target="_blank" download="image.png">
+      <a ref={downloadRef} href="#" target="_blank" download="image.jpg">
         <button
           className={`btn ${canDownload ? "btn-primary" : "btn-disabled"} mt-2`}
         >
