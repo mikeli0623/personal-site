@@ -41,10 +41,10 @@
     "title": "Kernal Image Processor",
     "desc": "Uses a kernel (convolution matrix) to perform simple image processing on PPM images. Includes other options from a 'failed' implementation. Originally implemented in C and ported to the web.",
     "tech": ["C", "JavaScript", "HTML"],
-    "preview": "",
+    "preview": "/conv.mp4",
     "link": "/convolution",
     "github": "https://github.com/mikeli0623/SWRENG-2S03-Assignments",
-    "placeholder": "",
+    "placeholder": "/conv.webp",
     "demo": true
   }
 }
