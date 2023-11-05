@@ -38,6 +38,7 @@ const Hero = () => {
   return (
     <div className="hero w-full mt-4 md:mt-20 min-h-[70vh]">
       <div className="hero-content flex-col lg:flex-row">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/me.webp"
           alt="Me"
@@ -62,14 +63,14 @@ const Hero = () => {
               , I&apos;m Mike
             </motion.span>
           </span>
-          <motion.p
+          {/* <motion.p
             className="py-6"
             initial="hidden"
             animate="show"
             variants={third}
           >
-            Software Engineer, overall cool guy 😎
-          </motion.p>
+            Software Engineer
+          </motion.p> */}
         </div>
       </div>
     </div>

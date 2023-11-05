@@ -12,27 +12,24 @@ const web = ["Node", "Express", "Next.js", "React", "HTML", "CSS", "MongoDB"];
 
 const cloud = ["AWS"];
 
-const list1 = ["Item 1", "Item 2"];
-const list2 = ["Item 3", "Item 4"];
-
 const AboutMe = forwardRef<Ref, Prop>((prop, ref) => {
-  const getRow = (i: number) => {
-    if (i === 0 || i === 1) return 1;
-
-    return Math.floor(i / 2) + 1;
-  };
-
   return (
     <div
       className="flex flex-col items-center justify-center w-full my-2"
       ref={ref}
     >
       <Header text="About Me" />
-      <div className="w-4/6">
-        I love coding! Recently focusing on web development with React. Check
-        out some of my skills below.
+      <div className="w-1/2 text-center text-lg">
+        Hey there! My name is Mike and I am a software engineer who recently
+        graduated from McMaster University. I aspire to have a career that
+        allows me to create software which can have a positive impact on
+        people&apos;s lives. Recently, I have been focusing on web development
+        with React and enjoy making small projects on the side. Check out some
+        of them below! When I&apos;m not programming, I&apos;m usually playing
+        my guitar, playing video games, or watching shows.
       </div>
-      <div className="lg:w-2/3 w-11/12 grid grid-cols-3 gap-2 mt-8">
+      <h1 className="text-4xl text-primary my-8">Skills</h1>
+      <div className="lg:w-2/3 w-11/12 grid grid-cols-3 gap-2">
         <h3 className="text-base md:text-xl text-accent  m-auto">
           Programming Languages
         </h3>

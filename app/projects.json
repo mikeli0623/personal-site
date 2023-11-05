@@ -1,7 +1,7 @@
 {
   "star-rail-warp-sim": {
     "title": "Star Rail Warp Sim",
-    "desc": "Cool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool projectCool project. Features internationalization for 12 langauges.",
+    "desc": "Recreates many features from the game Honkai Star Rail. Features internationalization for 12 langauges.",
     "tech": ["React", "JavaScript", "HTML", "CSS"],
     "preview": "/sr.mp4",
     "link": "https://starrailwarpsim.com/",
@@ -11,7 +11,7 @@
   },
   "ros": {
     "title": "Restaurant Ordering System",
-    "desc": "",
+    "desc": "A restuarant ordering system that allows customers to view a menu from a restaurant and create orders. Also allows staff to view and manange orders, as well as create and delete menu items and categories.",
     "tech": [
       "MongoDB",
       "Express",

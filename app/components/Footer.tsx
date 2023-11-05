@@ -11,7 +11,7 @@ const Footer = ({ handleScrollTop }: Props) => {
   return (
     <footer className="footer footer-center p-10">
       <aside>
-        <p>Built and designed with Nextjs and Tailwind CSS by me.</p>
+        <p>Built and designed with Next.js and Tailwind CSS by me.</p>
         <p>Written in Typescript and deployed using Vercel.</p>
         <Link
           href="https://github.com/mikeli0623/personal-site"
