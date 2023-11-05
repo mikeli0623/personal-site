@@ -19,7 +19,7 @@ const AboutMe = forwardRef<Ref, Prop>((prop, ref) => {
       ref={ref}
     >
       <Header text="About Me" />
-      <div className="w-1/2 text-center text-lg">
+      <div className="lg:w-1/2 w-11/12 text-center lg:text-lg">
         Hey there! My name is Mike and I am a software engineer who recently
         graduated from McMaster University. I aspire to have a career that
         allows me to create software which can have a positive impact on
