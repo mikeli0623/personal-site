@@ -8,10 +8,8 @@ import ProjectSection from "./components/ProjectSection";
 import { NavProps } from "./util/interfaces";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import Hero from "./components/Hero";
-import { Raleway } from "next/font/google";
 import Footer from "./components/Footer";
 
-const raleway = Raleway({ subsets: ["latin"] });
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -47,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <main className={raleway.className}>
+    <main>
       <TopNav
         projectRef={projectRef}
         contactRef={contactRef}
