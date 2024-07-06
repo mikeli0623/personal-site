@@ -62,6 +62,7 @@ const Project: React.FC<Props> = ({ project, flip }) => {
           link={project.link}
           playing={playing}
           onClick={() => setPlaying(!playing)}
+          hasDemo={project.demo}
         />
         <ProjectTech tech={project.tech} flip={flip} width={width} />
       </motion.div>

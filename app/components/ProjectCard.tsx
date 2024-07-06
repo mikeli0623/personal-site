@@ -10,6 +10,7 @@ interface Props {
   link: string;
   onClick: () => void;
   playing: boolean;
+  hasDemo: boolean;
 }
 
 const ProjectCard = ({
@@ -19,6 +20,7 @@ const ProjectCard = ({
   github,
   link,
   playing,
+  hasDemo,
   onClick,
 }: Props) => {
   return (
@@ -42,17 +44,19 @@ const ProjectCard = ({
               flip ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
           >
-            <button
-              className="btn btn-circle bg-accent border-accent hover:bg-accent hover:border-accent hover:brightness-125 hover:scale-110"
-              onClick={onClick}
-            >
-              <Image
-                src={playing ? "pause.svg" : "play.svg"}
-                alt={playing ? "Pause Icon" : "Play Icon"}
-                width={40}
-                height={40}
-              />
-            </button>
+            {hasDemo && (
+              <button
+                className="btn btn-circle bg-accent border-accent hover:bg-accent hover:border-accent hover:brightness-125 hover:scale-110"
+                onClick={onClick}
+              >
+                <Image
+                  src={playing ? "pause.svg" : "play.svg"}
+                  alt={playing ? "Pause Icon" : "Play Icon"}
+                  width={40}
+                  height={40}
+                />
+              </button>
+            )}
             <Link href={link} target="_blank" className="mx-2">
               <button className="btn btn-circle bg-accent border-accent hover:bg-accent hover:border-accent hover:brightness-125 hover:scale-110">
                 <Image

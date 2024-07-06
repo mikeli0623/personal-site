@@ -1,4 +1,14 @@
 {
+  "starfield-blueprints": {
+    "title": "Starfield Blueprints",
+    "desc": "Website where users can create and share ship blueprints from the game Starfield.",
+    "tech": ["Next.js", "React", "TypeScript", "MongoDB", "Express"],
+    "preview": ".",
+    "link": "https://starfieldblueprints.com/",
+    "github": "https://github.com/mikeli0623/starfield-blueprints",
+    "placeholder": "/sf.webp",
+    "demo": false
+  },
   "star-rail-warp-sim": {
     "title": "Star Rail Warp Sim",
     "desc": "Recreates many features from the game Honkai Star Rail. Features internationalization for 12 langauges.",
@@ -7,7 +17,7 @@
     "link": "https://starrailwarpsim.com/",
     "github": "https://github.com/mikeli0623/star-rail-warp-sim",
     "placeholder": "/sr.webp",
-    "demo": false
+    "demo": true
   },
   "ros": {
     "title": "Restaurant Ordering System",
@@ -25,7 +35,7 @@
     "link": "https://restaurant-ordering-system-r080.onrender.com/",
     "github": "https://github.com/mikeli0623/ros-full",
     "placeholder": "/ros.webp",
-    "demo": false
+    "demo": true
   },
   "music": {
     "title": "Heardle Unlimited",
